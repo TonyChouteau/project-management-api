@@ -6,6 +6,8 @@ import (
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
+
+	"github.com/TonyChouteau/project-management-api/storage"
 )
 
 /*
@@ -19,7 +21,7 @@ import (
 	- store project in a directory
 
 Annexes -
-	Status : 0 not started yet, 1 closed, 2 ongoing
+	Status : 0 not started yet, 1 ongoing, 2 closed
 */
 
 /*
@@ -27,9 +29,16 @@ Count Getter : See "1)a"
 */
 func counter(c *gin.Context) {
 
-	c.JSON(200, gin.H{
-		"type": typeParams,
-	})
+	countByType := storage.CountProjects(c)
+
+	c.JSON(200, countByType)
+}
+
+func projects(c *gin.Context) {
+
+	projects := storage.GetProjects(c)
+
+	c.JSON(200, projects)
 }
 
 /*
@@ -40,6 +49,7 @@ func Serve() {
 	r.Use(cors.Default())
 
 	r.GET("/count", counter)
+	r.GET("/projects", projects)
 	//r.StaticFile("/image", "./images/951546.jpg")
 
 	err := http.ListenAndServe(":8081", r)

@@ -15,7 +15,8 @@ type ProjectCount struct {
 CountByType struct
 */
 type CountByType struct {
-	Type map[string]ProjectCount `json:"type"`
+	Tags  map[string]ProjectCount `json:"tags"`
+	Total int                     `json:"total"`
 }
 
 // PROJECTS
@@ -26,7 +27,10 @@ Project struct
 type Project struct {
 	ID          int      `json:"id"`
 	Title       string   `json:"title"`
+	SubTitle    string   `json:"subtitle"`
 	Description string   `json:"description"`
+	Status      int      `json:"status"`
+	Type        int      `json:"type"`
 	Tags        []string `json:"tags"`
 }
 
@@ -34,6 +38,6 @@ type Project struct {
 ProjectList struct
 */
 type ProjectList struct {
-	Project Project `json:"project"`
-	Count   int     `json:"count"`
+	Projects []Project `json:"project"`
+	Count    int       `json:"count"`
 }

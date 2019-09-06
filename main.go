@@ -1,6 +1,6 @@
 package main
 
-import "github.com/TonyChouteau/project-managment-api/https"
+import "github.com/TonyChouteau/project-management-api/https"
 
 /*
 1) Getters & Setters -
