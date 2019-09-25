@@ -122,7 +122,7 @@
         "title": "Fluffitten Adventure",
         "subtitle": "Un jeu type RPG dans le monde des Fluffitten",
         "description": "N/A",
-        "status": 0,
+        "status": 1,
         "type": 0,
         "solo": false,
         "tags": [

@@ -52,8 +52,8 @@ func Serve() {
 	r.GET("/projects", projects)
 	//r.StaticFile("/image", "./images/951546.jpg")
 
-	err := http.ListenAndServe(":8081", r)
-	//err := http.ListenAndServeTLS(":8081", "/etc/letsencrypt/live/www.domain.com/fullchain.pem", "/etc/letsencrypt/live/www.domain.com/privkey.pem", r)
+	//err := http.ListenAndServe(":8081", r)
+	err := http.ListenAndServeTLS(":8081", "/etc/letsencrypt/live/vps.tonychouteau.fr/fullchain.pem", "/etc/letsencrypt/live/vps.tonychouteau.fr/privkey.pem", r)
 
 	if err != nil {
 		log.Fatal("ListenAndServe: ", err)
