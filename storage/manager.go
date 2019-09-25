@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
+	"strconv"
 
 	"github.com/gin-gonic/gin"
 )
@@ -73,5 +74,29 @@ func GetProjects(c *gin.Context) ProjectList {
 	return ProjectList{
 		projects,
 		len(projects),
+	}
+}
+
+func GetProject(c *gin.Context, id int) Project {
+
+	jsonFile, err := os.Open("data/projects.json")
+	if err != nil {
+		fmt.Println(err)
+	}
+	byteValue, _ := ioutil.ReadAll(jsonFile)
+
+	projects := []Project{}
+	err = json.Unmarshal(byteValue, &projects)
+
+	if (id >0 && id < len(projects)+1) {
+		project := projects[id-1]
+		return project
+	}
+
+	return Project{
+		ID : -1,
+		Title : "ERROR",
+		SubTitle : "No project with this ID",
+		Description : "Id of project are between 1 and "+strconv.Itoa(len(projects)),
 	}
 }
