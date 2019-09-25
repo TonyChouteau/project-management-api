@@ -16,7 +16,7 @@
     },
     {
         "id": 2,
-        "title": "www.cometconfetti.fr",
+        "title": "Com & Confetti",
         "subtitle": "Création du site web d'une agence de Com dans le var",
         "description": "N/A",
         "status": 2,
@@ -65,7 +65,7 @@
     {
         "id": 5,
         "title": "Project Manager",
-        "subtitle": "Manageur de projet typennel : Front with ReactJS & Back in Go",
+        "subtitle": "Web app to manage my projects : Front with ReactJS & Back in Go",
         "description": "N/A",
         "status": 1,
         "type": 0,
@@ -95,7 +95,7 @@
     {
         "id": 7,
         "title": "Chat-Garou",
-        "subtitle": "Application maitre du jeu pour une version typenalisé du Loup Garou Une Nuit",
+        "subtitle": "Application maitre du jeu pour une version personalisé du Loup Garou Une Nuit",
         "description": "N/A",
         "status": 1,
         "type": 0,
@@ -145,7 +145,7 @@
     },
     {
         "id": 11,
-        "title": "Ali",
+        "title": "ALI",
         "subtitle": "Un assistant personnel, fait par moi, pour moi",
         "description": "N/A",
         "status": 0,
