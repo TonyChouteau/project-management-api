@@ -17,7 +17,7 @@
     {
         "id": 2,
         "title": "Com & Confetti",
-        "subtitle": "Création du site web d'une agence de Com dans le var",
+        "subtitle": "Création du site web l'agence Com & Conffetti",
         "description": "N/A",
         "status": 2,
         "type": 1,
@@ -138,9 +138,9 @@
         "type": 0,
         "solo": false,
         "tags": [
+            "ia",
             "c",
-            "python",
-            "ia"
+            "python"
         ]
     },
     {
