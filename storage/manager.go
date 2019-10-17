@@ -4,18 +4,15 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"log"
 	"os"
-
-	"github.com/gin-gonic/gin"
+	"strconv"
 )
 
 /*
 CountProjects function
 */
-func CountProjects(c *gin.Context) CountByType {
-
-	msg := c.DefaultQuery("firstname", "false")
-	fmt.Println(msg)
+func CountProjects() CountByType {
 
 	jsonFile, err := os.Open("data/projects.json")
 	if err != nil {
@@ -59,7 +56,7 @@ func CountProjects(c *gin.Context) CountByType {
 /*
 GetProjects function
 */
-func GetProjects(c *gin.Context) ProjectList {
+func GetProjects() ProjectList {
 
 	jsonFile, err := os.Open("data/projects.json")
 	if err != nil {
@@ -74,4 +71,37 @@ func GetProjects(c *gin.Context) ProjectList {
 		projects,
 		len(projects),
 	}
+}
+
+/*
+GetImageList : get list of images sorted by project
+*/
+func GetImageList() ImageList {
+
+	files, err := ioutil.ReadDir("./images")
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	imageList := map[int]ImageByProject{}
+	for _, f := range files {
+
+		images, err := ioutil.ReadDir("./images/" + f.Name())
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		projectImages := ImageByProject{}
+		for _, f := range images {
+			projectImages = append(projectImages, f.Name())
+		}
+
+		key, err := strconv.Atoi(f.Name())
+		if err != nil {
+			log.Fatal(err)
+		}
+		imageList[key] = projectImages
+	}
+
+	return imageList
 }

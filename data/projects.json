@@ -16,18 +16,18 @@
     },
     {
         "id": 2,
-        "title": "www.cometconfetti.fr",
-        "subtitle": "Création du site web d'une agence de Com dans le var",
+        "title": "MultiShot (Nom provisoire)",
+        "subtitle": "Online space war game made with P5.js and a Go server - I will remake it with NodeJS",
         "description": "N/A",
-        "status": 2,
-        "type": 1,
+        "status": 1,
+        "type": 0,
         "solo": true,
         "tags": [
             "web",
             "html",
             "css",
             "javascript",
-            "wordpress"
+            "go"
         ]
     },
     {
@@ -122,7 +122,7 @@
         "title": "Fluffitten Adventure",
         "subtitle": "Un jeu type RPG dans le monde des Fluffitten",
         "description": "N/A",
-        "status": 0,
+        "status": 1,
         "type": 0,
         "solo": false,
         "tags": [
@@ -138,9 +138,9 @@
         "type": 0,
         "solo": false,
         "tags": [
+            "ia",
             "c",
-            "python",
-            "ia"
+            "python"
         ]
     },
     {

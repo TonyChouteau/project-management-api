@@ -29,16 +29,27 @@ Count Getter : See "1)a"
 */
 func counter(c *gin.Context) {
 
-	countByType := storage.CountProjects(c)
+	countByType := storage.CountProjects()
 
 	c.JSON(200, countByType)
 }
 
 func projects(c *gin.Context) {
 
-	projects := storage.GetProjects(c)
+	projects := storage.GetProjects()
 
 	c.JSON(200, projects)
+}
+
+func imagesList(c *gin.Context) {
+
+	//id, err := strconv.Atoi(c.Param("1"))
+	/*if err != nil {
+		println("Error")
+	}*/
+	filesList := storage.GetImageList()
+
+	c.JSON(200, filesList)
 }
 
 /*
@@ -50,7 +61,12 @@ func Serve() {
 
 	r.GET("/count", counter)
 	r.GET("/projects", projects)
+	r.GET("/imageslist/:id", imagesList)
+
+	r.Static("/images", "./images")
+
 	//r.StaticFile("/image", "./images/951546.jpg")
+	//r.Use(static.Serve("", static.LocalFile("/data/images/", false)))
 
 	err := http.ListenAndServe(":8081", r)
 	//err := http.ListenAndServeTLS(":8081", "/etc/letsencrypt/live/www.domain.com/fullchain.pem", "/etc/letsencrypt/live/www.domain.com/privkey.pem", r)
