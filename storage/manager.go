@@ -9,6 +9,17 @@ import (
 	"strconv"
 )
 
+func exists(path string) (bool, error) {
+	_, err := os.Stat(path)
+	if err == nil {
+		return true, nil
+	}
+	if os.IsNotExist(err) {
+		return false, nil
+	}
+	return true, err
+}
+
 /*
 CountProjects function
 */
@@ -138,15 +149,20 @@ GetImageList : get a single dir list of images
 */
 func GetImageList(id string) ImageByProject {
 
-	images, err := ioutil.ReadDir("./images/" + id)
-	if err != nil {
-		log.Fatal(err)
+	if exists, _ := exists("./images/" + id); exists {
+
+		images, err := ioutil.ReadDir("./images/" + id)
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		imageByProject := ImageByProject{}
+		for _, f := range images {
+			imageByProject = append(imageByProject, f.Name())
+		}
+
+		return imageByProject
 	}
 
-	imageByProject := ImageByProject{}
-	for _, f := range images {
-		imageByProject = append(imageByProject, f.Name())
-	}
-
-	return imageByProject
+	return ImageByProject{}
 }
