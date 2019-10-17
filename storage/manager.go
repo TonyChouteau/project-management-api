@@ -157,6 +157,7 @@ func GetImageList(id string) ImageByProject {
 		}
 
 		imageByProject := ImageByProject{}
+
 		for _, f := range images {
 			imageByProject = append(imageByProject, f.Name())
 		}
