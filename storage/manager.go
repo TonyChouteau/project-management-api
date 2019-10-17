@@ -74,9 +74,36 @@ func GetProjects() ProjectList {
 }
 
 /*
-GetImageList : get list of images sorted by project
+GetProject : get a single project
 */
-func GetImageList() ImageList {
+func GetProject(id int) Project {
+
+	jsonFile, err := os.Open("data/projects.json")
+	if err != nil {
+		fmt.Println(err)
+	}
+	byteValue, _ := ioutil.ReadAll(jsonFile)
+
+	projects := []Project{}
+	err = json.Unmarshal(byteValue, &projects)
+
+	if id > 0 && id < len(projects)+1 {
+		project := projects[id-1]
+		return project
+	}
+
+	return Project{
+		ID:          -1,
+		Title:       "ERROR",
+		SubTitle:    "No project with this ID",
+		Description: "Id of project are between 1 and " + strconv.Itoa(len(projects)),
+	}
+}
+
+/*
+GetImageLists : get list of images sorted by project
+*/
+func GetImageLists() ImageList {
 
 	files, err := ioutil.ReadDir("./images")
 	if err != nil {
@@ -88,7 +115,7 @@ func GetImageList() ImageList {
 
 		images, err := ioutil.ReadDir("./images/" + f.Name())
 		if err != nil {
-			log.Fatal(err)
+			//log.Fatal(err)
 		}
 
 		projectImages := ImageByProject{}
@@ -104,4 +131,22 @@ func GetImageList() ImageList {
 	}
 
 	return imageList
+}
+
+/*
+GetImageList : get a single dir list of images
+*/
+func GetImageList(id string) ImageByProject {
+
+	images, err := ioutil.ReadDir("./images/" + id)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	imageByProject := ImageByProject{}
+	for _, f := range images {
+		imageByProject = append(imageByProject, f.Name())
+	}
+
+	return imageByProject
 }

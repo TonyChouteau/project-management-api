@@ -3,6 +3,7 @@ package https
 import (
 	"log"
 	"net/http"
+	"strconv"
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
@@ -41,13 +42,29 @@ func projects(c *gin.Context) {
 	c.JSON(200, projects)
 }
 
-func imagesList(c *gin.Context) {
+func project(c *gin.Context) {
+
+	id, _ := strconv.Atoi(c.Param("id"))
+	project := storage.GetProject(id)
+
+	c.JSON(200, project)
+}
+
+func imagesLists(c *gin.Context) {
 
 	//id, err := strconv.Atoi(c.Param("1"))
 	/*if err != nil {
 		println("Error")
 	}*/
-	filesList := storage.GetImageList()
+	filesList := storage.GetImageLists()
+
+	c.JSON(200, filesList)
+}
+
+func imagesList(c *gin.Context) {
+
+	id := c.Param("id")
+	filesList := storage.GetImageList(id)
 
 	c.JSON(200, filesList)
 }
@@ -61,10 +78,11 @@ func Serve() {
 
 	r.GET("/count", counter)
 	r.GET("/projects", projects)
+	r.GET("/project/:id", project)
+	r.GET("/imageslists", imagesLists)
 	r.GET("/imageslist/:id", imagesList)
 
 	r.Static("/images", "./images")
-
 	//r.StaticFile("/image", "./images/951546.jpg")
 	//r.Use(static.Serve("", static.LocalFile("/data/images/", false)))
 
