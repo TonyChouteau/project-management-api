@@ -30,14 +30,14 @@ Count Getter : See "1)a"
 */
 func counter(c *gin.Context) {
 
-	countByType := storage.CountProjects(c)
+	countByType := storage.CountProjects()
 
 	c.JSON(200, countByType)
 }
 
 func projects(c *gin.Context) {
 
-	projects := storage.GetProjects(c)
+	projects := storage.GetProjects()
 
 	c.JSON(200, projects)
 }
@@ -45,9 +45,28 @@ func projects(c *gin.Context) {
 func project(c *gin.Context) {
 
 	id, _ := strconv.Atoi(c.Param("id"))
-	project := storage.GetProject(c, id)
+	project := storage.GetProject(id)
 
 	c.JSON(200, project)
+}
+
+func imagesLists(c *gin.Context) {
+
+	//id, err := strconv.Atoi(c.Param("1"))
+	/*if err != nil {
+		println("Error")
+	}*/
+	filesList := storage.GetImageLists()
+
+	c.JSON(200, filesList)
+}
+
+func imagesList(c *gin.Context) {
+
+	id := c.Param("id")
+	filesList := storage.GetImageList(id)
+
+	c.JSON(200, filesList)
 }
 
 /*
@@ -60,7 +79,12 @@ func Serve() {
 	r.GET("/count", counter)
 	r.GET("/projects", projects)
 	r.GET("/project/:id", project)
+	r.GET("/imageslists", imagesLists)
+	r.GET("/imageslist/:id", imagesList)
+
+	r.Static("/images", "./images")
 	//r.StaticFile("/image", "./images/951546.jpg")
+	//r.Use(static.Serve("", static.LocalFile("/data/images/", false)))
 
 	//err := http.ListenAndServe(":8081", r)
 	err := http.ListenAndServeTLS(":8081", "/etc/letsencrypt/live/vps.tonychouteau.fr/fullchain.pem", "/etc/letsencrypt/live/vps.tonychouteau.fr/privkey.pem", r)

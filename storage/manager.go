@@ -4,19 +4,26 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"log"
 	"os"
 	"strconv"
-
-	"github.com/gin-gonic/gin"
 )
+
+func exists(path string) (bool, error) {
+	_, err := os.Stat(path)
+	if err == nil {
+		return true, nil
+	}
+	if os.IsNotExist(err) {
+		return false, nil
+	}
+	return true, err
+}
 
 /*
 CountProjects function
 */
-func CountProjects(c *gin.Context) CountByType {
-
-	msg := c.DefaultQuery("firstname", "false")
-	fmt.Println(msg)
+func CountProjects() CountByType {
 
 	jsonFile, err := os.Open("data/projects.json")
 	if err != nil {
@@ -60,7 +67,7 @@ func CountProjects(c *gin.Context) CountByType {
 /*
 GetProjects function
 */
-func GetProjects(c *gin.Context) ProjectList {
+func GetProjects() ProjectList {
 
 	jsonFile, err := os.Open("data/projects.json")
 	if err != nil {
@@ -77,7 +84,10 @@ func GetProjects(c *gin.Context) ProjectList {
 	}
 }
 
-func GetProject(c *gin.Context, id int) Project {
+/*
+GetProject : get a single project
+*/
+func GetProject(id int) Project {
 
 	jsonFile, err := os.Open("data/projects.json")
 	if err != nil {
@@ -88,15 +98,72 @@ func GetProject(c *gin.Context, id int) Project {
 	projects := []Project{}
 	err = json.Unmarshal(byteValue, &projects)
 
-	if (id >0 && id < len(projects)+1) {
+	if id > 0 && id < len(projects)+1 {
 		project := projects[id-1]
 		return project
 	}
 
 	return Project{
-		ID : -1,
-		Title : "ERROR",
-		SubTitle : "No project with this ID",
-		Description : "Id of project are between 1 and "+strconv.Itoa(len(projects)),
+		ID:          -1,
+		Title:       "ERROR",
+		SubTitle:    "No project with this ID",
+		Description: "Id of project are between 1 and " + strconv.Itoa(len(projects)),
 	}
+}
+
+/*
+GetImageLists : get list of images sorted by project
+*/
+func GetImageLists() ImageList {
+
+	files, err := ioutil.ReadDir("./images")
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	imageList := map[int]ImageByProject{}
+	for _, f := range files {
+
+		images, err := ioutil.ReadDir("./images/" + f.Name())
+		if err != nil {
+			//log.Fatal(err)
+		}
+
+		projectImages := ImageByProject{}
+		for _, f := range images {
+			projectImages = append(projectImages, f.Name())
+		}
+
+		key, err := strconv.Atoi(f.Name())
+		if err != nil {
+			log.Fatal(err)
+		}
+		imageList[key] = projectImages
+	}
+
+	return imageList
+}
+
+/*
+GetImageList : get a single dir list of images
+*/
+func GetImageList(id string) ImageByProject {
+
+	if exists, _ := exists("./images/" + id); exists {
+
+		images, err := ioutil.ReadDir("./images/" + id)
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		imageByProject := ImageByProject{}
+
+		for _, f := range images {
+			imageByProject = append(imageByProject, f.Name())
+		}
+
+		return imageByProject
+	}
+
+	return ImageByProject{}
 }

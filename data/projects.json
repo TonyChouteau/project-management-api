@@ -16,18 +16,18 @@
     },
     {
         "id": 2,
-        "title": "Com & Confetti",
-        "subtitle": "Création du site web l'agence Com & Conffetti",
+        "title": "MultiShot (Nom provisoire)",
+        "subtitle": "Online space war game made with P5.js and a Go server - I will remake it with NodeJS",
         "description": "N/A",
-        "status": 2,
-        "type": 1,
+        "status": 1,
+        "type": 0,
         "solo": true,
         "tags": [
             "web",
             "html",
             "css",
             "javascript",
-            "wordpress"
+            "go"
         ]
     },
     {

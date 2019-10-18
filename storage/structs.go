@@ -41,3 +41,17 @@ type ProjectList struct {
 	Projects []Project `json:"project"`
 	Count    int       `json:"count"`
 }
+
+/*
+=====================
+*/
+
+/*
+ImageByProject : list of name of each images in this project
+*/
+type ImageByProject []string
+
+/*
+ImageList : list of images sorted by project
+*/
+type ImageList map[int]ImageByProject
