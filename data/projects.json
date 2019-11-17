@@ -155,5 +155,42 @@
             "ia",
             "python"
         ]
+    },
+    {
+        "id": 12,
+        "title": "PyPoint",
+        "subtitle": "Interface graphique faite sous Python contenant un explorateur de fichier, un tableur simplifié permettant d'ouvrir des fichiers au format .CSV et d’en dessiner des graphiques 2D ou 3D",
+        "description": "N/A",
+        "status": 2,
+        "type": 0,
+        "solo": true,
+        "tags": [
+            "python"
+        ]
+    },
+    {
+        "id": 13,
+        "title": "PyPeriodic",
+        "subtitle": "Interface graphique faite sous Python permettant de visualiser le tableau périodique des éléments, et entre autres, de calculer la structure électronique de l'élément choisi.",
+        "description": "N/A",
+        "status": 2,
+        "type": 0,
+        "solo": true,
+        "tags": [
+            "python"
+        ]
+    },
+    {
+        "id": 14,
+        "title": "Procedural Generator",
+        "subtitle": "Générateur de carte 2D procédurale en Java via la librairie Processing3.",
+        "description": "N/A",
+        "status": 2,
+        "type": 0,
+        "solo": true,
+        "tags": [
+            "processing",
+            "java"
+        ]
     }
 ]
