@@ -6,6 +6,8 @@
         "status": 1,
         "type": 0,
         "solo": true,
+        "sources": "#",
+        "link": "https://www.tonychouteau.fr",
         "tags": [
             "web",
             "html",
@@ -22,6 +24,8 @@
         "status": 1,
         "type": 0,
         "solo": true,
+        "sources": "https://github.com/users/TonyChouteau/projects/3",
+        "link": "https://www.tonychouteau.fr/multishot/",
         "tags": [
             "web",
             "html",
@@ -38,6 +42,8 @@
         "status": 2,
         "type": 1,
         "solo": true,
+        "sources": "https://github.com/TonyChouteau/hydra",
+        "link": "https://www.tonychouteau.fr/hydra/",
         "tags": [
             "web",
             "html",
@@ -55,6 +61,8 @@
         "status": 1,
         "type": 0,
         "solo": false,
+        "sources": "#",
+        "link": "https://youtu.be/UOTBFmHr2dg",
         "tags": [
             "unity",
             "c#",
@@ -70,6 +78,8 @@
         "status": 1,
         "type": 0,
         "solo": true,
+        "sources": "https://github.com/users/TonyChouteau/projects/2",
+        "link": "https://www.tonychouteau.fr/projets",
         "tags": [
             "web",
             "html",
@@ -87,6 +97,8 @@
         "status": 2,
         "type": 1,
         "solo": true,
+        "sources": "#",
+        "link": "http://seo.tonychouteau.fr/",
         "tags": [
             "web",
             "p5.js"
@@ -100,6 +112,8 @@
         "status": 1,
         "type": 0,
         "solo": false,
+        "sources": "https://github.com/TonyChouteau/WerewolfPlus",
+        "link": "#",
         "tags": [
             "android",
             "processing"
@@ -113,6 +127,8 @@
         "status": 2,
         "type": 2,
         "solo": false,
+        "sources": "#",
+        "link": "#",
         "tags": [
             "python"
         ]
@@ -125,6 +141,8 @@
         "status": 1,
         "type": 0,
         "solo": false,
+        "sources": "#",
+        "link": "#",
         "tags": [
             "android"
         ]
@@ -137,6 +155,8 @@
         "status": 1,
         "type": 0,
         "solo": false,
+        "sources": "#",
+        "link": "https://www.tonychouteau.fr/elric",
         "tags": [
             "ia",
             "c",
@@ -151,6 +171,8 @@
         "status": 0,
         "type": 0,
         "solo": true,
+        "sources": "#",
+        "link": "#",
         "tags": [
             "ia",
             "python"
@@ -164,6 +186,8 @@
         "status": 2,
         "type": 0,
         "solo": true,
+        "sources": "#",
+        "link": "https://www.tonychouteau.fr/pypoint",
         "tags": [
             "python"
         ]
@@ -176,6 +200,8 @@
         "status": 2,
         "type": 0,
         "solo": true,
+        "sources": "#",
+        "link": "https://www.tonychouteau.fr/pyperiodic",
         "tags": [
             "python"
         ]
@@ -188,6 +214,8 @@
         "status": 2,
         "type": 0,
         "solo": true,
+        "sources": "#",
+        "link": "#",
         "tags": [
             "processing3",
             "java",
@@ -202,6 +230,8 @@
         "status": 2,
         "type": 0,
         "solo": true,
+        "sources": "#",
+        "link": "#",
         "tags": [
             "processing3",
             "java"
@@ -209,12 +239,14 @@
     },
     {
         "id": 16,
-        "title": "AN - 3D Perlin noise",
+        "title": "3D Perlin noise",
         "subtitle": "Art Numérique : Cube de vecteur de Perlin Noise.",
         "description": "N/A",
         "status": 2,
         "type": 0,
         "solo": true,
+        "sources": "#",
+        "link": "#",
         "tags": [
             "processing3",
             "java",
