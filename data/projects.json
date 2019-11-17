@@ -192,5 +192,18 @@
             "processing3",
             "java"
         ]
+    },
+    {
+        "id": 15,
+        "title": "Jeu de la vie",
+        "subtitle": "Editeur et simulateur du jeu de la vie en Java via la librairie Processing3.",
+        "description": "N/A",
+        "status": 2,
+        "type": 0,
+        "solo": true,
+        "tags": [
+            "processing3",
+            "java"
+        ]
     }
 ]
