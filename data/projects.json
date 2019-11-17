@@ -1,7 +1,7 @@
 [{
         "id": 1,
         "title": "www.tonychouteau.fr",
-        "subtitle": "Mon site web, présentant mes projets & activités professionnelle",
+        "subtitle": "Mon site web, présentant mes projets & activités professionnelle.",
         "description": "N/A",
         "status": 1,
         "type": 0,
@@ -17,7 +17,7 @@
     {
         "id": 2,
         "title": "MultiShot (Nom provisoire)",
-        "subtitle": "Online space war game made with P5.js and a Go server - I will remake it with NodeJS",
+        "subtitle": "Un jeu type .io fait avec P5.js (front) et Go (back) via des requêtes HTTPS (pas optimale, je le sais). Je vais le refaire plus tard en NodeJS.",
         "description": "N/A",
         "status": 1,
         "type": 0,
@@ -33,7 +33,7 @@
     {
         "id": 3,
         "title": "Hydra",
-        "subtitle": "Meetic A/B Tests Manager : Front with ReactJS & Back in Go",
+        "subtitle": "Gestionnaire d'A/B Tests durant mon stage à Meetic : fait en ReactJS (front) et en Go (back) via le protocole REST.",
         "description": "N/A",
         "status": 2,
         "type": 1,
@@ -50,7 +50,7 @@
     {
         "id": 4,
         "title": "RPG - Unity3D",
-        "subtitle": "RPG médiéval utilisation de Unity3D & Blender",
+        "subtitle": "RPG médiéval utilisant le moteur graphique Unity3D et le Blender pour créer les modèles 3D.",
         "description": "N/A",
         "status": 1,
         "type": 0,
@@ -64,8 +64,8 @@
     },
     {
         "id": 5,
-        "title": "Project Manager",
-        "subtitle": "Web app to manage my projects : Front with ReactJS & Back in Go",
+        "title": "Application de gestion de projets",
+        "subtitle": "Application web pour lister et modifier mes projets. Actuellement en cours de développement.",
         "description": "N/A",
         "status": 1,
         "type": 0,
@@ -82,7 +82,7 @@
     {
         "id": 6,
         "title": "SEO Jumper - Démo",
-        "subtitle": "Jeu éducatif dans l'univers du SEO : référencement google plus particulièrement",
+        "subtitle": "Démo d'un jeu éducatif dans l'univers du SEO : référencement google plus particulièrement.",
         "description": "N/A",
         "status": 2,
         "type": 1,
@@ -95,7 +95,7 @@
     {
         "id": 7,
         "title": "Chat-Garou",
-        "subtitle": "Application maitre du jeu pour une version personalisé du Loup Garou Une Nuit",
+        "subtitle": "Application Android maitre du jeu pour une version personalisé du Loup Garou Une Nuit.",
         "description": "N/A",
         "status": 1,
         "type": 0,
@@ -108,7 +108,7 @@
     {
         "id": 8,
         "title": "Fluffy French Adventure",
-        "subtitle": "Un jeu éducatif pour apprendre le français au anglais",
+        "subtitle": "Un jeu éducatif pour apprendre le français au anglais développé lors d'un Hackathon, le sujet était : Rassembler des données de manière ludique.",
         "description": "N/A",
         "status": 2,
         "type": 2,
@@ -120,7 +120,7 @@
     {
         "id": 9,
         "title": "Fluffitten Adventure",
-        "subtitle": "Un jeu type RPG dans le monde des Fluffitten",
+        "subtitle": "Un jeu mobile (Android) type RPG dans le monde des Fluffitten.",
         "description": "N/A",
         "status": 1,
         "type": 0,
@@ -132,7 +132,7 @@
     {
         "id": 10,
         "title": "ELRIC",
-        "subtitle": "IA d'echec",
+        "subtitle": "Une IA d'echecs actuellement en développement en parrallèle de ma formation d'ingénieur à l'ENSSAT",
         "description": "N/A",
         "status": 1,
         "type": 0,
@@ -146,13 +146,14 @@
     {
         "id": 11,
         "title": "ALI",
-        "subtitle": "Un assistant personnel, fait par moi, pour moi",
+        "subtitle": "Un assistant personnel, fait par moi, pour moi. Un projet d'anvergure, en effet, tout l'intérêt vien de là.",
         "description": "N/A",
         "status": 0,
         "type": 0,
         "solo": true,
         "tags": [
-            "ia"
+            "ia",
+            "python"
         ]
     }
 ]
