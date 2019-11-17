@@ -43,7 +43,7 @@
         "type": 1,
         "solo": true,
         "sources": "https://github.com/TonyChouteau/hydra",
-        "link": "https://www.tonychouteau.fr/hydra/",
+        "link": "http://hydra.tonychouteau.fr/hydra/",
         "tags": [
             "web",
             "html",
