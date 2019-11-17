@@ -32,8 +32,8 @@ type Project struct {
 	Status      int      `json:"status"`
 	Type        int      `json:"type"`
 	Solo        bool     `json:"solo"`
-	Source      string   `json:"source"`
-	Linl        string   `json:"link"`
+	Sources      string   `json:"sources"`
+	Link        string   `json:"link"`
 	Tags        []string `json:"tags"`
 }
 
