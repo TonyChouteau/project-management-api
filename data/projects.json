@@ -190,7 +190,8 @@
         "solo": true,
         "tags": [
             "processing3",
-            "java"
+            "java",
+            "perlinnoise"
         ]
     },
     {
@@ -204,6 +205,20 @@
         "tags": [
             "processing3",
             "java"
+        ]
+    },
+    {
+        "id": 16,
+        "title": "AN - 3D Perlin noise",
+        "subtitle": "Art Numérique : Cube de vecteur de Perlin Noise.",
+        "description": "N/A",
+        "status": 2,
+        "type": 0,
+        "solo": true,
+        "tags": [
+            "processing3",
+            "java",
+            "perlinnoise"
         ]
     }
 ]
