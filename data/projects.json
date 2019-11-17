@@ -50,7 +50,7 @@
     {
         "id": 4,
         "title": "RPG - Unity3D",
-        "subtitle": "RPG médiéval utilisant le moteur graphique Unity3D et le Blender pour créer les modèles 3D.",
+        "subtitle": "RPG médiéval utilisant le moteur graphique Unity3D et Blender pour créer les modèles 3D.",
         "description": "N/A",
         "status": 1,
         "type": 0,
@@ -171,7 +171,7 @@
     {
         "id": 13,
         "title": "PyPeriodic",
-        "subtitle": "Interface graphique faite sous Python permettant de visualiser le tableau périodique des éléments, et entre autres, de calculer la structure électronique de l'élément choisi.",
+        "subtitle": "Interface graphique faite sous Python permettant de visualiser le tableau périodique des éléments, et entre autres, de calculer la structure électronique d'un l'élément choisi.",
         "description": "N/A",
         "status": 2,
         "type": 0,
